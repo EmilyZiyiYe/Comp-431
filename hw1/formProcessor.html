@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang = "en_US">
+
+<head>
+  <title>Form Information</title>
+  <meta name="author" content="Ziyi Ye">
+  <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+
+<body onload="getInfo()">
+  <h1> Form Information </h1>
+  <table>
+    <tr>
+      <td>Account name</td>
+      <td id="an"></td>
+    </tr>
+
+    <tr>
+      <td>Displayed name</td>
+     <td id="dn"></td>
+   </tr>
+
+   <tr>
+      <td>Email address</td>
+     <td id="ea"></td>
+   </tr>
+
+   <tr>
+     <td>Phone Number</td>
+     <td id="pn"></td>
+   </tr>
+
+   <tr>
+     <td>Date of birth</td>
+     <td id="dob"></td>
+   </tr>
+      
+   <tr>
+      <td>Zipcode</td>
+      <td id="zipcode"></td>
+    </tr>
+
+    <tr>
+     <td>Password</td>
+      <td id="pw"></td>
+   </tr>
+
+   <tr>
+     <td>Password confirmation</td>
+     <td id="pwcon"></td>
+   </tr>
+
+   <tr>
+      <td>Timestamp</td>
+      <td id="ts"></td>
+   </tr>
+  </table>
+</body>
+
+<script>
+
+  function getInfo(){
+    var urlstring = window.location.href;
+    var urlparts = urlstring.split("&"); 
+    var info = urlparts.map(function(it){return it.split("=")[1]})
+
+    info[2] = info[2].replace("%40", "@");
+    time = new Date(Number(info[8]))
+    document.getElementById("an").innerHTML = info[0]
+    document.getElementById("dn").innerHTML = info[1]
+    document.getElementById("ea").innerHTML = info[2]
+    document.getElementById("pn").innerHTML = info[3]
+    document.getElementById("dob").innerHTML = info[4]
+    document.getElementById("zipcode").innerHTML = info[5]
+    document.getElementById("pw").innerHTML = info[6]
+    document.getElementById("pwcon").innerHTML = info[7]
+    document.getElementById("ts").innerHTML = time 
+  }
+
+</script>
+</html>
+

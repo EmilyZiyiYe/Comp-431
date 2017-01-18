@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang = "en_US">
+
+<head>
+	<title>Registration Form</title>
+	<meta name="author" content="Ziyi Ye">
+</head>
+
+<body>
+<form method=("GET") action=formProcessor.html id="myForm">
+
+	<p>Account name(Account name cannot start with a number)<br> <input type="text" name="account name" id="accountname" placeholder="account name" required></p>
+
+	<p>Display name(optional)<br> <input type="text" name="display name" placeholder="display name"></p>
+
+	<p>Email address: ***@***.***<br> <input type="email" name="email" placeholder="***@***.***" required></p>
+
+	<p>Phone Number: 123-123-1234<br><input type="tel" name="phone" pattern="[1-9][0-9]{2}-[0-9]{3}-[0-9]{4}" placeholder="123-123-1234" required></p>
+
+	<p>Date of birth<br><input type="Date" name="date of birth" id="DOB" placeholder="Date of birth" required></p>
+
+	<p>Zipcode<br><input type="tel" name="zipcode" placeholder="zipcode" pattern="[0-9]{5}" required></p>
+
+	<p>Password<br><input type="password" name="password" id="password" placeholder="password" required ></p>
+
+	<p>Password confirmation<br><input type="password" id="passwordcon" name="passwordcon" placeholder="password" required></p>
+
+	<p> <input type="hidden" id="timestamp" name="timestamp" value="0"></p> 
+
+	<p><input type="submit" value="Submit" onclick = "return someFunc()"></p>
+  	
+  <p><input type="reset" value="Clear"></p>
+
+</form>
+</body>
+
+
+<script>
+
+  function someFunc() {
+    var submit = false;
+    submit = validateAccountname() & validateAge() & validatePassword() & getTimestamp();
+    return submit;
+  }
+
+  function validateAccountname() {
+	 var account_name = document.getElementById("accountname");
+	 var firstChar = account_name.value.slice(0, 1);
+    if ((firstChar == "1") || (firstChar == "2")
+      || (firstChar == "3") ||(firstChar == "4")||(firstChar == "5")||(firstChar == "6")||(firstChar == "7")||(firstChar == "8")||(firstChar == "9")) {
+    	account_name.setCustomValidity("Account name cannot start with a number");
+  		return false
+    }else{
+  		account_name.setCustomValidity('')
+      return true}
+  }
+
+  function validatePassword(){
+	 var password = document.getElementById("password")
+    , confirm_password = document.getElementById("passwordcon");
+    if(password.value != confirm_password.value) {
+      confirm_password.setCustomValidity("Passwords Don't Match");
+      return false;
+    } else {
+     confirm_password.setCustomValidity('');
+     return true
+    }
+  }
+
+
+  function getTimestamp() {
+     var d = new Date();
+     var n = d.getTime();
+      document.getElementById("timestamp").value = n;
+      return true
+  }
+
+  function validateAge(){
+    var today = new Date();
+    var dateString = document.getElementById("DOB").value
+    var dateParts = dateString.split("-");
+    var bd = new Date(dateParts[0], dateParts[1] - 1, dateParts[2])
+    
+
+ 	  var today = new Date()
+  	var age = today.getFullYear() - bd.getFullYear()
+  	var age_month = today.getMonth() - bd.getMonth()
+  	var age_day = today.getDate() - bd.getDate()
+
+    if (age_month < 0 || (age_month === 0 && age_day < 0)) {
+      age--;
+    }
+    
+    if (age < 18) {
+   document.getElementById("DOB").setCustomValidity("Users must be at least 18 years old to register")
+   		return false;
+    }else{
+      document.getElementById("DOB").setCustomValidity('')
+      return true
+    }
+  }
+ 
+</script>
+</html>
+
