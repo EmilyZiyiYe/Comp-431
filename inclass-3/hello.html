@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en_US">
+
+<head>
+	<title>Hello</title>
+	<meta name="author" content="Ziyi Ye">
+</head>
+
+
+<body onload = "setTimeout(f1, 5000)" >
+<h1>Ziyi Ye</h1>
+<br/>
+<img src="https://www.planwallpaper.com/static/images/general-night-golden-gate-bridge-hd-wallpapers-golden-gate-bridge-wallpaper.jpg" width="300px" title="bridge">
+<p>I am a second-year CS major from Hanszen college. I am very excited to learn more in this class. </p>
+<br/>
+<a href="http://www.google.com">link to google</a>
+<br/>
+<br/>
+<textarea rows="4" cols="50" id="text"></textarea><br>
+<input type="submit" value="submit">
+<input type="button" id="id_clearbutton" value="clearTextArea" onclick="clearText()"><br>
+<p><span id="indicator">15</span></p> 
+<input type="button" value="pause" onclick = "pause()">
+<input type="button" value="resume" onclick = "resume()">
+
+
+</body>
+
+<script>
+    var timer = setInterval(countDown,1000);
+    var present=15000;
+    function countDown(){
+        document.getElementById("indicator").innerHTML=(present/1000-1);
+        present = present - 1000;
+        if(present<=0){
+            window.location.href="https://www.clear.rice.edu/comp431/sample/hello.html";
+        }
+    }
+
+    function clearText() {
+    
+      document.getElementById("text").value = "";
+    }
+
+    var f1 = function message() {
+	           var msg = "the page will redirect when the counter reaches zero"
+	           alert(msg)
+            }
+
+    function pause(){
+          clearInterval(timer);
+    }
+    function resume(){
+        timer=setInterval(countDown,1000);
+    }
+
+</script>
