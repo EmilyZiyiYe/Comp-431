@@ -1,0 +1,42 @@
+#canvas {
+	border:15px solid black;
+}
+
+#warning {
+	padding: 5px;
+    background-color: white;
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    font-family: 'chalkboard';
+}
+
+#restart {
+	font-family: 'chalkboard';
+	background-color: white; 
+    color: black; 
+    padding: 20px 40px;
+    border: 10px solid #f44336;
+    font-size: 50px;
+    text-align: center;
+
+}
+
+#text {
+	color : black;
+	font-family: 'chalkboard';
+}
+
+span{
+	color: blue;
+}
+
+#record{
+    padding: 10px;
+    background-color: grey;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'chalkboard';
+}
