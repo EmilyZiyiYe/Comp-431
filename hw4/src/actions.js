@@ -1,0 +1,32 @@
+const Action = {
+
+     ADD_ARTICLE: 'ADD_ARTICLE'
+    ,SEARCH_KEYWORD: 'SEARCH_KEYWORD'
+    ,UPDATE_HEADLINE: 'UPDATE_HEADLINE'
+    ,UPDATE_DISPLAY: 'UPDATE_DISPLAY'
+    ,UPDATE_EMAIL: 'UPDATE_EMAIL'
+    ,UPDATE_ZIPCODE: 'UPDATE_ZIPCODE'
+    ,UPDATE_PHONE: "UPDATE_PHONE"
+    ,UPDATE_PASSWORD: 'UPDATE_PASSWORD'
+    ,REMOVE_FOLLOWER: 'REMOVE_FOLLOWER'
+    ,ADD_FOLLOWER: 'ADD_FOLLOWER'
+
+    ,ERROR: 'ERROR'
+    ,SUCCESS: 'SUCCESS'
+
+    ,NAV_PROFILE: 'NAV_PROFILE'
+    ,NAV_MAIN: 'NAV_MAIN'
+    ,NAV_OUT: 'NAV_OUT'
+
+    ,LOGIN: 'LOGIN'
+    ,LOGOUT: 'LOGOUT'
+}
+
+export default Action
+
+
+export function showError(msg){
+    return {type:Action.ERROR, errormsg: msg};
+}
+
+

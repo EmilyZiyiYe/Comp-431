@@ -1,0 +1,7 @@
+{
+	"followers": [
+		{"id": 1, "username": "Apple", "img": "http://cliparts.co/cliparts/8T6/kXb/8T6kXbGTE.png", "headline": "I am an apple"},
+		{"id": 2, "username": "Banana", "img": "http://static2.crated.com/HzQM85kqBKLd5luTKNIgukpdauo=/fit-in/960x960/filters:quality(90)/crated/thumbs/art/2014/07/16/6b77f321b0bfa4d2277d11c955501d3c/960.jpg", "headline": "I am a banana"},
+		{"id": 3, "username": "Strawberry", "img":"http://previews.123rf.com/images/gigisomplak/gigisomplak1307/gigisomplak130700027/20851812-Happy-cartoon-strawberry-character-Stock-Vector.jpg", "headline": "I am a strawberry"}
+	]
+}
