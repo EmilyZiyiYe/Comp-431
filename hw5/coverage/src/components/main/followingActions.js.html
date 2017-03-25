@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/main/followingActions.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/components/main/</a> followingActions.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.24% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>13/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.57% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.88% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.09% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>6/23</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">1 branch</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Action, {resource, showError, showSuccess, toMain, toProfile, toLanding} from '../../actions'
+&nbsp;
+export <span class="fstat-no" title="function not covered" >function removeFollower(username, dispatch) {</span> <span class="cstat-no" title="statement not covered" >u</span>pdateFollowers('DELETE', username, dispatch) }
+export <span class="fstat-no" title="function not covered" >function addFollower(username, dispatch) {</span> <span class="cstat-no" title="statement not covered" >u</span>pdateFollowers('PUT', username, dispatch) }
+export <span class="fstat-no" title="function not covered" >function getFollower(dispatch) {<span class="cstat-no" title="statement not covered" ></span>u</span>pdateFollowers('GET', '', dispatch)}
+ 
+export <span class="fstat-no" title="function not covered" >function updateFollowers(method, name, dispatch) {</span>
+	//make request to server based on the input(add, remove or just get followers)
+<span class="cstat-no" title="statement not covered" >	r</span>esource(method, 'following' + (name ? '/' + name : ''))
+	.then(<span class="fstat-no" title="function not covered" >(response) =&gt; {</span>
+		//to check whether the user is valid by checking whether this user is in the follower list in the response
+<span class="cstat-no" title="statement not covered" >		if (method == 'PUT' &amp;&amp; response.following.indexOf(name) &lt; 0){</span>
+<span class="cstat-no" title="statement not covered" >                d</span>ispatch(showError(`User does not exist`))
+            }
+		//map each follower an array to later contain its headline and avatar and eventually pass the data
+		//to reducer
+<span class="cstat-no" title="statement not covered" >		c</span>onst followers = response.following.map(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span></span>name)=&gt;({username:name}))
+		//turn the list of followers to string so that can be used as the endpoint
+		//when requesting headlines and avatars
+<span class="cstat-no" title="statement not covered" >		c</span>onst followers_string= response.following.join(',')
+		//make request to server to get every follower's headline
+<span class="cstat-no" title="statement not covered" >		r</span>esource('GET', `headlines/${followers_string}`)
+			.then(<span class="fstat-no" title="function not covered" >(response) =&gt; { </span>
+<span class="cstat-no" title="statement not covered" >				r</span>esponse.headlines.forEach(<span class="fstat-no" title="function not covered" >(line) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >					f</span>ollowers.forEach(<span class="fstat-no" title="function not covered" >(person) =&gt; {</span>
+						//add the headline info to the corresponding user
+						(<span class="cstat-no" title="statement not covered" ></span>person.username === line.username)? person.headline = line.headline:null
+					})
+				})
+				//make request to server to get every follower's avatar
+<span class="cstat-no" title="statement not covered" >				r</span>esource('GET', `avatars/${followers_string}`)
+					.then(<span class="fstat-no" title="function not covered" >(response) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >						r</span>esponse.avatars.forEach(<span class="fstat-no" title="function not covered" >(img) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >							f</span>ollowers.forEach(<span class="fstat-no" title="function not covered" >(person) =&gt; {</span>
+								//add the avatar info to the corresponding user
+								(<span class="cstat-no" title="statement not covered" ></span>person.username === img.username)? person.avatar = img.avatar:null
+							})
+						})
+					})
+					.then(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >						d</span>ispatch({type: Action.LOAD_FOLLOWERS, followers: followers})
+					})
+					.then(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >						r</span>esource('GET', 'articles')
+        				.then(<span class="fstat-no" title="function not covered" >(response) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            					d</span>ispatch({ type: Action.LOAD_ARTICLES, articles: response.articles})
+						})
+					})
+			})
+	})
+	.catch(<span class="fstat-no" title="function not covered" >(err) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		d</span>ispatch(showError(`There was an error getting your follower(s)`))
+	})
+}
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Mar 24 2017 23:25:49 GMT-0500 (CDT)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.064" tests="21" failures="0">
+  <testsuite name="Root Suite" timestamp="2017-03-25T04:17:16" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Validate actions" timestamp="2017-03-25T04:17:16" tests="6" file="/Users/emily/Desktop/hw5/src/actions.spec.js" failures="0" time="0.005">
+    <testcase name="Validate actions resource should be a resource" time="0.003" classname="resource should be a resource">
+    </testcase>
+    <testcase name="Validate actions resource should give he http error" time="0.001" classname="resource should give he http error">
+    </testcase>
+    <testcase name="Validate actions resource should be POSTable" time="0.001" classname="resource should be POSTable">
+    </testcase>
+    <testcase name="Validate actions should update error message" time="0" classname="should update error message">
+    </testcase>
+    <testcase name="Validate actions should update success message" time="0" classname="should update success message">
+    </testcase>
+    <testcase name="Validate actions should navigate (to profile, main, or landing)" time="0" classname="should navigate (to profile, main, or landing)">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validate Article actions" timestamp="2017-03-25T04:17:16" tests="2" file="/Users/emily/Desktop/hw5/src/components/article/articleActions.spec.js" failures="0" time="0.001">
+    <testcase name="Validate Article actions should fetch articles" time="0" classname="should fetch articles">
+    </testcase>
+    <testcase name="Validate Article actions should update the search keyword" time="0.001" classname="should update the search keyword">
+    </testcase>
+  </testsuite>
+  <testsuite name="ArticlesView" timestamp="2017-03-25T04:17:17" tests="2" file="/Users/emily/Desktop/hw5/src/components/article/articleView.spec.js" failures="0" time="0.031">
+    <testcase name="ArticlesView should render articles" time="0.031" classname="should render articles">
+    </testcase>
+    <testcase name="ArticlesView should dispatch actions to create a new article" time="0" classname="should dispatch actions to create a new article">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validate Authentication (involves mocked requests)" timestamp="2017-03-25T04:17:17" tests="3" file="/Users/emily/Desktop/hw5/src/components/auth/authActions.spec.js" failures="0" time="0.001">
+    <testcase name="Validate Authentication (involves mocked requests) should log in a user" time="0" classname="should log in a user">
+    </testcase>
+    <testcase name="Validate Authentication (involves mocked requests) should not log in an invalid user" time="0.001" classname="should not log in an invalid user">
+    </testcase>
+    <testcase name="Validate Authentication (involves mocked requests) should log out a user (state should be cleared)" time="0" classname="should log out a user (state should be cleared)">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validate Profile actions (mocked requests)" timestamp="2017-03-25T04:17:17" tests="2" file="/Users/emily/Desktop/hw5/src/components/profile/profileActions.spec.js" failures="0" time="0.023">
+    <testcase name="Validate Profile actions (mocked requests) should fetch the user&apos;s profile information" time="0.005" classname="should fetch the user&apos;s profile information">
+    </testcase>
+    <testcase name="Validate Profile actions (mocked requests) should update headline" time="0.018" classname="should update headline">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validate reducer" timestamp="2017-03-25T04:17:17" tests="6" file="/Users/emily/Desktop/hw5/src/reducers.spec.js" failures="0" time="0.003">
+    <testcase name="Validate reducer should initialize state" time="0.001" classname="should initialize state">
+    </testcase>
+    <testcase name="Validate reducer should state success" time="0" classname="should state success">
+    </testcase>
+    <testcase name="Validate reducer should state error" time="0" classname="should state error">
+    </testcase>
+    <testcase name="Validate reducer should set the articles" time="0.001" classname="should set the articles">
+    </testcase>
+    <testcase name="Validate reducer should set the search keyword" time="0" classname="should set the search keyword">
+    </testcase>
+    <testcase name="Validate reducer should filter displayed articles by the search keyword" time="0.001" classname="should filter displayed articles by the search keyword">
+    </testcase>
+  </testsuite>
+</testsuites>
