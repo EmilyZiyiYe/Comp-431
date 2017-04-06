@@ -74,8 +74,6 @@ export const resource = (method, endpoint, payload, isJson=true) => {
       if (r.status === 200) {
         return (r.headers.get('Content-Type').indexOf('json') > 0) ? r.json() : r.text()
       } else {
-        // useful for debugging, but remove in production
-        console.error(`${method} ${endpoint} ${r.statusText}`)
         throw new Error(r.statusText)
       }
     })

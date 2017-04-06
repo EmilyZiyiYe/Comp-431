@@ -1,19 +1,19 @@
 
-> starter@1.0.0 e2e:base /Users/emily/Desktop/frontend
+> starter@1.0.0 e2e:base /Users/emily/Desktop/hw6-frontend
 > mocha --opts e2e/mocha.opts e2e/*.spec.js "--reporter" "xunit"
 
-<testsuite name="Mocha Tests" tests="13" failures="0" errors="0" skipped="0" timestamp="Thu, 06 Apr 2017 03:56:48 GMT" time="21.792">
+<testsuite name="Mocha Tests" tests="13" failures="0" errors="0" skipped="0" timestamp="Thu, 06 Apr 2017 08:33:00 GMT" time="21.458">
 <testcase classname="Test Landing Page" name="should register new user" time="0.248"/>
-<testcase classname="Test Landing Page" name="should login as test user" time="3.151"/>
-<testcase classname="Test Main Page" name="should create a new article and the article should appear in the feed" time="0.891"/>
-<testcase classname="Test Main Page" name="should count the number of followed users" time="0.225"/>
-<testcase classname="Test Main Page" name="should add the &quot;Follower&quot; user and verify following count increases by one" time="0.924"/>
-<testcase classname="Test Main Page" name="should remove the Follower user and verify following count decreases by one" time="0.806"/>
-<testcase classname="Test Main Page" name="should edit an article and the article text shoud be updated" time="1.144"/>
-<testcase classname="Test Main Page" name="should update the status headline and verify the change" time="0.658"/>
-<testcase classname="Test Main Page" name="should search for &quot;Only One Article Like This&quot; and verify only one article shows, and verify the author" time="0.828"/>
-<testcase classname="Test Profile Page" name="should update the user email and verify" time="1.059"/>
-<testcase classname="Test Profile Page" name="should update the user zipcode and verify" time="0.965"/>
-<testcase classname="Test Profile Page" name="should update the user password and verify" time="0.94"/>
-<testcase classname="shutdown" name="now" time="0.132"/>
+<testcase classname="Test Landing Page" name="should login as test user" time="3.117"/>
+<testcase classname="Test Main Page" name="should create a new article and the article should appear in the feed" time="0.895"/>
+<testcase classname="Test Main Page" name="should count the number of followed users" time="0.226"/>
+<testcase classname="Test Main Page" name="should add the &quot;Follower&quot; user and verify following count increases by one" time="0.907"/>
+<testcase classname="Test Main Page" name="should remove the Follower user and verify following count decreases by one" time="0.825"/>
+<testcase classname="Test Main Page" name="should edit an article and the article text shoud be updated" time="1.249"/>
+<testcase classname="Test Main Page" name="should update the status headline and verify the change" time="0.674"/>
+<testcase classname="Test Main Page" name="should search for &quot;Only One Article Like This&quot; and verify only one article shows, and verify the author" time="0.765"/>
+<testcase classname="Test Profile Page" name="should update the user email and verify" time="1.054"/>
+<testcase classname="Test Profile Page" name="should update the user zipcode and verify" time="0.977"/>
+<testcase classname="Test Profile Page" name="should update the user password and verify" time="0.946"/>
+<testcase classname="shutdown" name="now" time="0.151"/>
 </testsuite>

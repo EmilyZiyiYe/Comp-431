@@ -14,9 +14,10 @@ export const ArticleDiv = ({_id, text,date,img,author, comments,displayflag, com
         <div id="main_article_title" className="panel-heading">{author} said on {date}:</div>
         <div className="panel-body">
           { author != current_user? 
-            <div className = "main_others_articles" contentEditable="false">{text}</div>
+            <div className = "main_others_articles">{text}</div>
             :
-            <div id = {_id} className = "main_my_articles" onInput ={(e)=>{edit_article = e.target.innerText}} contentEditable="true">{text}</div>
+            <div id = {_id} className = "main_my_articles" onInput ={(e)=>{edit_article = e.target.innerText}} 
+              contentEditable="true" dangerouslySetInnerHTML={{__html: text}}></div>
           }
           <div>
           <img src={ img } width="200" height="40"  className="img-thumbnail img-responsive"/>
@@ -32,7 +33,7 @@ export const ArticleDiv = ({_id, text,date,img,author, comments,displayflag, com
           { !commentflag?'': 
               <div>
                 <textarea id={_id + "commentText"} placeholder="comment on the post" >
-                </textarea>
+                </textarea> 
                 <button className="btn btn-primary" onClick = {()=> {commentAct(_id)
                                                                     editAct(_id, document.getElementById(_id + "commentText").value, -1)}}>Post</button>
               </div>

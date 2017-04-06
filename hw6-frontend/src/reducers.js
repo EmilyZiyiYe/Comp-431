@@ -32,30 +32,24 @@ const Reducer = (state =  {location: "", errormsg:"",successmsg:"",keyword:"",fo
             return { ...state, 
                     articles_shown: Object.keys(action.articles).map((_id)=> action.articles[_id]).map((article)=>({...article, displayflag:false, commentflag: false})), 
                     articles: Object.keys(action.articles).map((_id)=> action.articles[_id]).map((article)=>({...article,displayflag:false, commentflag: false})) 
-            }
-        }
+        }}
         case Action.ADD_ARTICLE: {
             return {...state,articles:[action.article, ...state.articles],articles_shown:[action.article, ...state.articles_shown]}}
         case Action.SEARCH_KEYWORD:
             return {...state,keyword: action.keyword,articles_shown: state.articles.filter(
                     article => {
                         if (article.text){return article.text.toLowerCase().includes(action.keyword.toLowerCase())}
-                    })
-            }
+        })}
         case Action.EDIT_ARTICLE:{
-            return {...state, 
-                articles_shown: state.articles_shown.map(article => 
+            return {...state, articles_shown: state.articles_shown.map(article => 
                 {if (article._id == action.article._id){article = {...article, text:action.article.text, comments:action.article.comments }
                                                         return article }
-                 else{return article}
-                }),
+                 else{return article}}),
                 articles: state.articles.map(article => 
                 {if (article._id == action.article._id){article = {...article, text:action.article.text, comments:action.article.comments }
                                                         return article }
                  else{return article}
-                })
-             }
-        }
+        })}}
         case Action.ERROR:
             return{...state, ...reset_msg, errormsg: action.errormsg}
         case Action.CHANGE_FLAG://This action changes the flag of whether to show comments or not 
@@ -69,7 +63,7 @@ const Reducer = (state =  {location: "", errormsg:"",successmsg:"",keyword:"",fo
                                                             else{displayflag = article.displayflag}
                                                             return {...article,displayflag}})
             }
-        case Action.COMMENT_FLAG:
+        case Action.COMMENT_FLAG://This action changes the flag of whether to allow comment(i.e. show the textarea for commenting) on the article or not
             return {...state, 
                 articles:state.articles.map((article)=>{let commentflag
                                                         if(article._id==action.id){commentflag = !article.commentflag}

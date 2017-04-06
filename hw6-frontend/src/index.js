@@ -1,5 +1,4 @@
 require('expose?$!expose?jQuery!jquery')
-require("bootstrap-webpack")
 
 
 import React from 'react'
@@ -13,11 +12,8 @@ import App from './components/app'
 
 
 
-// const store = createStore(Reducer)
+const store = createStore(Reducer)
 
-const logger = createLogger()
-
-const store = createStore(Reducer, applyMiddleware(logger))
 render(
     <Provider store={store}>
         <App />

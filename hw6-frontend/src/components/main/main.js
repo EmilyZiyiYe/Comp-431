@@ -15,10 +15,10 @@ const Main = ({dispatch}) => {
 		 	<div className="text-center">
 				<h1>RiceBook</h1>
 				<ErrorSuccess/>
-				<div className="jumbotron col-md-8 ">
+				<div className="jumbotron col-md-8 col-xs-8">
 					<ArticleView/>
 				</div>
-				<div className="jumbotron col-md-3" >
+				<div className="jumbotron col-md-3 col-xs-3">
 					<Headline/>
 					<Following/>
 				</div>

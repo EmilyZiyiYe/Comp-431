@@ -9,9 +9,10 @@ const Comment = ({article_id, id, author, date, text, current_user, editAct}) =>
         <strong><h5> {author} commented on {date} </h5></strong>
         <div className='className="panel-body"'>
         {(current_user != author)?
-            <div className = "main_comment" contentEditable="false">{text}</div>
+            <div className = "main_comment">{text}</div>
             :
-            <div id = {id} className = "main_comment" onInput ={(e)=>{new_comment = e.target.innerText}} contentEditable="true">{text}</div>
+            <div id = {id} className = "main_comment" onInput ={(e)=>{new_comment = e.target.innerText}} 
+                contentEditable="true" dangerouslySetInnerHTML={{__html: text}}></div>
 
         }
         </div>
