@@ -18,8 +18,10 @@ describe('Validate Profile', () => {
         })
         .then(res => {
             expect(res.status).to.eql(200)
-            const res = res.json()
-            username = res.headlines[0].username
+            return res.json()
+        })
+        .then(body => {
+            username = body.headlines[0].username
         })
         .then(_=>{
 
@@ -31,8 +33,10 @@ describe('Validate Profile', () => {
         })
         .then((res)=>{
             expect(res.status).to.eql(200)
-            const res = res.json()
-            expect(res.headline).to.equal(newheadline)
+            return res.json()
+        })
+        .then(body => {
+            expect(body.headline).to.equal(newheadline)
         })
 
         .then(_=>{
@@ -42,8 +46,10 @@ describe('Validate Profile', () => {
             })
         })
         .then(res => {
-            const res = res.json()
-            expect(res.headlines[0].headline).to.equal(newheadline)
+            return res.json()
+        })
+        .then(body => {
+            expect(body.headlines[0].headline).to.equal(newheadline)
         })
         .then(done)
         .catch(done)

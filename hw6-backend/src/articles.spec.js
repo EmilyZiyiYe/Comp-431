@@ -15,8 +15,10 @@ describe('Validate Article', () => {
     	})
 		.then(res => {
 			expect(res.status).to.eql(200)
-			const res = res.json()
-			initial_num = res.articles.length
+			return res.json()
+		})
+		.then(body => {
+			initial_num = body.articles.length
 		})
         .then( _=>{
 		 	return fetch(url("/article"),{
@@ -27,8 +29,10 @@ describe('Validate Article', () => {
 		})
         .then(res => {
 			expect(res.status).to.eql(200)
-			const res = res.json()
-			expect(res.articles[0].text).to.eql(new_article)
+			return res.json()
+		})
+		.then(body => {
+			expect(body.articles[0].text).to.eql(new_article)
 		})
         .then(_=>{
 			return fetch(url("/articles"), {
@@ -37,9 +41,11 @@ describe('Validate Article', () => {
     	})
 		}).then(res => {
 			expect(res.status).to.eql(200)
-			const res = res.json()
+			return res.json()
+		})
+		.then(body => {
 			later_num = body.articles.length
-			expect(initial_num+1).to.eql(;later_num)
+			expect(initial_num+1).to.eql(later_num)
 		})
 		.then(done)
 		.catch(done)
