@@ -17,6 +17,7 @@ const profiles = [
 
 const getHeadlines = (req, res) => {
 	if (!req.user) req.user = "default"
+	//get the list of user(s) that need to return headlins of
 	const users = req.params.users ? req.params.users.split(',') : [req.user]
 	const headlines = users.map(user => {
 		let userInfo = profiles.filter((uSer)=>{return uSer.username == user})
@@ -33,6 +34,7 @@ const putHeadline = (req, res) => {
 	}
 	else{
 		profiles.filter((uSer)=>{ 
+			//change the headline of the requested user
 			if (uSer.username == user){uSer.headline = headline}
 		})
 		res.status(200).send({username: user, headline: headline})

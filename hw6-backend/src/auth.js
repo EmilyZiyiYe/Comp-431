@@ -23,8 +23,11 @@ const register = (req, res) => {
 		return
 	}
 	else{
+		//create unique salt by adding current time to username
 		const salt=new Date()+username
+		//this is the password after adding salt
 		const salt_password = md5(salt+password)
+		//store the registered user so that it can log in
 		userObj[username]={salt: salt, password: salt_password, email: email,
 							dob:dob, zipcode:zipcode}
 		res.send({result: 'success', username: username})
@@ -49,6 +52,7 @@ const login = (req, res) => {
 		res.sendStatus(401).send("username or password is invalid")
 		return
 	}
+	//use username to create session_id
 	const session_id = md5(username)
 	sessionUser[cookieKey]={username: username}
 	res.cookie(cookieKey, session_id, {maxAge:3600*1000, httpOnly:true})
