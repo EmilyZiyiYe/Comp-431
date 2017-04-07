@@ -6,7 +6,7 @@ describe('Test Profile Page', () => {
 
     before('should update the user email and verify', (done) => {
     	findId("profile_btn").click()
-    	.then(sleep(200))
+    	.then(sleep(500))
     	.then(done)
     })
 
@@ -16,7 +16,7 @@ describe('Test Profile Page', () => {
     	.then(findId('profile_email').sendKeys(new_email))
         .then(sleep(300))
     	.then(findId("profile_btn").click())
-        .then(sleep(300))
+        .then(sleep(500))
     	.then(findId('profile_show_email').getText()
     		.then(text => {
     			expect(text).to.equal(new_email)
@@ -46,7 +46,7 @@ describe('Test Profile Page', () => {
     	.then(findId('profile_passwordcon').sendKeys(passwordcon))
         .then(sleep(200))
     	.then(findId('profile_btn').click())
-        .then(sleep(300))
+        .then(sleep(500))
     	.then(findId('successmsg').getText()
     		.then(text => {
     			expect(text).to.equal('Password will not change')

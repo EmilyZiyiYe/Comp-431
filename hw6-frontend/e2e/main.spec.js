@@ -16,12 +16,15 @@ describe('Test Main Page', () => {
 		.then(findId("main_postarticle").sendKeys(text))
 		.then(sleep(200))
 		.then(findId("main_post").click())
-		.then(sleep(200))
-		.then(findClassName("main_my_articles").getText()
-                .then((newarticle)=> {
-                        expect(newarticle).to.equal(text)
-                    }
-                ))
+		.then(sleep(500))
+		.then(findCSS(".main_my_articles")
+	            .then((articles)=> {
+	            	articles[0].getText()
+	            		.then(newtext =>
+	            			expect(newtext).to.equal(text)
+	            		)
+	            })
+        )
         .then(done)
     })
 
@@ -29,7 +32,7 @@ describe('Test Main Page', () => {
 		sleep(200)
 		.then(findCSS('.follower')
 			.then(followers =>{
-				expect(followers.length).to.be.at.least(2)
+				expect(followers.length).to.be.ok
 			}))
 		.then(done)
 	})
@@ -42,7 +45,7 @@ describe('Test Main Page', () => {
 				count = followers.length
 				findId("main_newfollower").sendKeys('Follower')
 				findId("main_newfollower_btn").click()
-				sleep(500)
+				sleep(2000)
 				findCSS('.follower')
 				.then(followers => {
 					expect(followers.length).to.equal(count+1)
@@ -51,20 +54,37 @@ describe('Test Main Page', () => {
 			.then(done))	
 	})
 	it('should remove the Follower user and verify following count decreases by one',(done) => {
-		let remove_count
+		let remove_count, clickflag
 		sleep(200)
 		.then(findCSS('.follower')
 			.then(followers => {
 				remove_count = followers.length
-				findId("main_unfollow_btn").click()
-				sleep(500)
-				findCSS('.follower')
-				.then(followers => {
-					expect(followers.length).to.equal(remove_count-1)
+				followers.forEach((follower)=>{
+					findId('main_follower_name').getText() 
+						.then((text)=>{
+							if(text==="Follower"){
+								findId("main_unfollow_btn").click()
+								clickflag = true
+							}
+							else{
+								clickflag = false
+							}
+						})
 				})
-			})
-			.then(done))	
+			}))
+		sleep(1000)
+		findCSS('.follower')
+		.then(followers => { 
+			if (clickflag){
+				expect(followers.length).to.equal(remove_count-1)
+			}
+			else{
+				expect(followers.length).to.equal(remove_count)
+			}
+		})
+		.then(done)	
 	})
+
 
     it('should edit an article and the article text shoud be updated',(done) => {
             const after_edit = "after edit"
@@ -90,7 +110,7 @@ describe('Test Main Page', () => {
         .then(findId("main_newheadline").clear())
 		.then(findId("main_newheadline").sendKeys(new_headline))
 		.then(findId("main_headline_btn").click())
-		sleep(200)
+		sleep(2000)
 		.then(findId("main_headline").getText()
 			.then(text => {
 				expect(text).to.equal(new_headline)

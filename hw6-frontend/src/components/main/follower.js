@@ -7,7 +7,7 @@ const FollowerDiv = ({username, img, headline, removeAct}) => {
     return(
         <div className="follower">
             <img src={img} className="img-thumbnail img-responsive" height="150" width="150"/>
-            <div>{username}</div>
+            <div id='main_follower_name'>{username}</div>
             <div>{headline}</div>
             <input id="main_unfollow_btn" type='button' value='Unfollow' className="btn btn-danger btn-xs" onClick={() => {removeAct(username)}} />
         </div>
