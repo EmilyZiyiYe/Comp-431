@@ -1,0 +1,19 @@
+
+> starter@1.0.0 e2e:base /Users/emily/Desktop/hw6-frontend
+> mocha --opts e2e/mocha.opts e2e/*.spec.js "--reporter" "xunit"
+
+<testsuite name="Mocha Tests" tests="13" failures="0" errors="0" skipped="0" timestamp="Fri, 07 Apr 2017 04:55:02 GMT" time="25.143">
+<testcase classname="Test Landing Page" name="should register new user" time="0.252"/>
+<testcase classname="Test Landing Page" name="should login as test user" time="3.133"/>
+<testcase classname="Test Main Page" name="should create a new article and the article should appear in the feed" time="0.885"/>
+<testcase classname="Test Main Page" name="should count the number of followed users" time="0.226"/>
+<testcase classname="Test Main Page" name="should add the &quot;Follower&quot; user and verify following count increases by one" time="2.405"/>
+<testcase classname="Test Main Page" name="should remove the Follower user and verify following count decreases by one" time="1.33"/>
+<testcase classname="Test Main Page" name="should edit an article and the article text shoud be updated" time="1.188"/>
+<testcase classname="Test Main Page" name="should update the status headline and verify the change" time="2.476"/>
+<testcase classname="Test Main Page" name="should search for &quot;Only One Article Like This&quot; and verify only one article shows, and verify the author" time="0.734"/>
+<testcase classname="Test Profile Page" name="should update the user email and verify" time="1.075"/>
+<testcase classname="Test Profile Page" name="should update the user zipcode and verify" time="0.964"/>
+<testcase classname="Test Profile Page" name="should update the user password and verify" time="0.945"/>
+<testcase classname="shutdown" name="now" time="0.117"/>
+</testsuite>

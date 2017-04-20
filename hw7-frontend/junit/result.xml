@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.034" tests="10" failures="1">
+  <testsuite name="Root Suite" timestamp="2017-04-06T03:54:36" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Validate actions" timestamp="2017-04-06T03:54:36" tests="6" file="/Users/emily/Desktop/frontend/src/actions.spec.js" failures="0" time="0.005">
+    <testcase name="Validate actions resource should be a resource" time="0.002" classname="resource should be a resource">
+    </testcase>
+    <testcase name="Validate actions resource should give he http error" time="0.002" classname="resource should give he http error">
+    </testcase>
+    <testcase name="Validate actions resource should be POSTable" time="0.001" classname="resource should be POSTable">
+    </testcase>
+    <testcase name="Validate actions should update error message" time="0" classname="should update error message">
+    </testcase>
+    <testcase name="Validate actions should update success message" time="0" classname="should update success message">
+    </testcase>
+    <testcase name="Validate actions should navigate (to profile, main, or landing)" time="0" classname="should navigate (to profile, main, or landing)">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validate Article actions" timestamp="2017-04-06T03:54:37" tests="2" file="/Users/emily/Desktop/frontend/src/components/article/articleActions.spec.js" failures="0" time="0">
+    <testcase name="Validate Article actions should fetch articles" time="0" classname="should fetch articles">
+    </testcase>
+    <testcase name="Validate Article actions should update the search keyword" time="0" classname="should update the search keyword">
+    </testcase>
+  </testsuite>
+  <testsuite name="ArticlesView" timestamp="2017-04-06T03:54:37" tests="2" file="/Users/emily/Desktop/frontend/src/components/article/articleView.spec.js" failures="1" time="0.029">
+    <testcase name="ArticlesView should render articles" time="0.029" classname="should render articles">
+      <failure><![CDATA[TypeError: Cannot read property 'innerHTML' of null
+    at Context.<anonymous> (src/components/article/articleView.spec.js:43:12)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
