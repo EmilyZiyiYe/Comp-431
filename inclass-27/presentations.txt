@@ -1,0 +1,5 @@
+1. I liked Zhou Tong’s presentation about react native because his presentation had clear flow and structure. Each point was elaborated on in an understandable way. Additionally, her presentation felt very natural rather than scripted, which made me feel like she really knew what she was talking about.
+
+2. I learned the most from zhou Min’s presentation about redux and mobx. I learned why mobx is simpler and easier to use than redux. His reasons were simple and convincing - I will probably choose mobx over redux in the future.
+
+3. I like Sishen’s presentation the most overall. He talked about web advertising and analyzed real world cases like Google, which made his presentation feel a lit more relevant to real life as well as a lot more interesting.
